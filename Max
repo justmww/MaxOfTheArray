@@ -1,0 +1,81 @@
+//maowenwen2016.3.21
+//最大值的单元测试
+//仍有的错误：输入的数，若不是整数，错！
+#include<iostream>
+using namespace std;
+#define N 10000
+void Largest(int list[],int length)
+{
+	if(length!=int(length))
+	{
+		cout<<"您输入的不是整数，请重新输入"<<endl;
+		cin>>length;
+	}
+	if(length<0||length>10000)
+	{
+		cout<<"输入有误，请重新输入！"<<endl;
+		cin>>length;
+		if(length!=int(length))
+		{
+			cout<<"您输入的不是整数，请重新输入"<<endl;
+			cin>>length;
+		}
+	}
+	if(length==0)
+	{
+		cout<<"请输入一个值吧，不然没有最大值啊！"<<endl;
+		cin>>length;	
+		if(length!=int(length))
+		{
+			cout<<"您输入的不是整数，请重新输入"<<endl;
+			cin>>length;
+		}
+		if(length<0||length>2147483647)
+		{
+			cout<<"输入有误，请重新输入！"<<endl;
+			cin>>length;
+			if(length!=int(length))
+			{
+				cout<<"您输入的不是整数，请重新输入"<<endl;
+				cin>>length;
+			}
+		}
+	}
+	
+	int i,max;
+	max = list[0]; 
+	cout << "请依次输所要输入的值：" <<endl;
+	for(i=0;i<length;i++)
+	{
+		cin>>list[i];
+	}
+	for(i=0;i<length;i++)
+	{
+		if(list[i]!=int(list[i]))
+		{
+			cout<<"您输入的第"<<i<<"个数不是整数，请重新输入"<<endl;
+			cin>>list[i];
+		}
+	}
+	for(i=0;i<length;i++)
+	{
+		if(list[i]>max) 
+		{
+			max = list[i];
+		}
+	}
+	cout << "最大值为：" << max << endl;
+}
+void main()
+{
+	cout << "请输入您想输入数据的个数" << endl;
+	int a;
+	cin>> a;//个数
+	
+	int b[N];
+
+	int max;
+	Largest(b,a);
+	
+
+}
